@@ -1,0 +1,16 @@
+    <span class="Element">Название: {{Name}}</span >
+    <div class="ImageClass">
+        <img  [src]="Image" alt="img" width="270px" height="190" />
+    </div>
+    <div  class="Element">
+        <div class="Amount">
+            <span>Количество: {{Amount}}</span >
+        </div>
+            <div class="btn-block">
+                <div class="btn btn-primary btn-size" (click)='plusone()'>+</div>
+                <div class="btn btn-primary btn-size" (click)='minusone()'>-</div>
+            </div>
+    </div>
+    <div><span class="Element">Цена: {{Price}}</span ></div>
+    <div><span class="Element">Общая стоимость: {{Price*Amount}}</span ></div>
+    <div><input type="button" class="btn btn-primary btn-size-cart" value="В корзину" /></div>

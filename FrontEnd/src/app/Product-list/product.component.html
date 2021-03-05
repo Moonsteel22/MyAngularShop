@@ -1,0 +1,34 @@
+
+
+<div class="container container-size">
+  <div class="TovarsBox">
+          <app-productitem *ngFor="let item of ProductList; let i = index" class="oneTovar"
+            [Name]="item.Name"
+            [Amount]="item.Amount"
+            [Price]="item.Price"
+            [Id]="item.Id"
+            [Image]="item.Image">
+          </app-productitem>
+  </div>
+</div>
+<!--       
+    <form #ProductForm="ngForm" class="form" ngSubmit="addProduct(ProductForm)">
+      <div class="mb-3">
+        <label for="ProductInputName" class="form-label">Название продукта</label>
+        <input type="text" class="form-control" name="ProductName" [ngModel]>
+        
+      </div>
+      <div class="mb-3">
+        <label for="ProductInputAmount" class="form-label">Количество</label>
+        <input type="number" class="form-control" name="ProductAmount" [ngModel]>
+      </div>
+      <div class="mb-3">
+        <label for="ProductInputPrice" class="form-label">Цена</label>
+        <input type="number" class="form-control" name="ProductPrice" [ngModel]>
+      </div>
+      <div class="mb-3">
+        <button (click)="addProduct(ProductForm)" type="submit" class="btn btn-primary">Отправить</button>
+      </div>
+      
+    </form> -->
+    

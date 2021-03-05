@@ -1,0 +1,12 @@
+.formbox{
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:50px;
+}
+.btn-default{
+    background-color: aliceblue;
+    margin-top:10px;
+}
