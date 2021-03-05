@@ -8,6 +8,11 @@
 .hidden{
     visibility:visible;
 }
+.hiddenProfile{
+    visibility: hidden;
+    font-size: 20px;
+    background-color: rgb(101, 173, 236);
+}
 .links{
     color: black;
     align-items: center;

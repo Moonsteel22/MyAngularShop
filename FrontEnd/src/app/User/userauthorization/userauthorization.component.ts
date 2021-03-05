@@ -33,5 +33,6 @@ export class UserauthorizationComponent implements OnInit {
       this.router.navigate(['']);
       document.getElementById('EnterButton')!.style.visibility="hidden";
       document.getElementById('RegistButton')!.style.visibility="hidden";
+      document.getElementById('UserButton')!.style.visibility="visible";
   }
   }

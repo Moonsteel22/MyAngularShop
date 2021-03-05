@@ -1,1 +1,39 @@
-<p>user-interface works!</p>
+<div class="mainblock">
+    <div class="userInfoBlock">
+<div class="element">
+<span>
+    Логин:
+</span>
+</div>
+<div class="element">
+    <span>
+    E-mail:
+</span>
+</div > 
+<div class="element">
+    <span>
+    Дата регистрации:
+    </span>
+</div >
+<div class="element">
+    <span>
+    Баланс:
+    </span>
+</div>
+<div>
+    <a type='button' [routerLink]="['']" (click)='exitClick()' id='exitClick' class="btn btn-primary element">Выход</a>
+</div>
+    </div>
+<div class="container container-size">
+    <div class="TovarsBox">
+            <app-productitem *ngFor="let item of ProductList; let i = index" class="oneTovar"
+              [Name]="item.Name"
+              [Amount]="item.Amount"
+              [Price]="item.Price"
+              [Image]="item.Image"
+              Cart="hidden"
+              >
+            </app-productitem>
+    </div>
+  </div>
+</div>
