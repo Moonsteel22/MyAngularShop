@@ -32,7 +32,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9e1737d3-a281-43cc-87da-67494988eea8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/userRegistration/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/userRegistration/user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/userRegistration/user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/userRegistration/user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/userRegistration/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/userRegistration/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/userRegistration/userinterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/userRegistration/userinterface.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,5 +89,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

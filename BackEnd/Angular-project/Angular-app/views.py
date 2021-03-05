@@ -1,5 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
 from .models import AppPhone
 from .models import UserTable
 from django.core import serializers
@@ -17,13 +19,32 @@ def products(request):
          'Image': i['fields']['imgurl']
          })
     return JsonResponse([{'data':toClient}],safe=False)
-
+@csrf_exempt
 def registration(request):
-    return HttpResponse('as')
+    if(request.method == 'POST'):
+        data=json.loads(request.body)
+        print(data)
+        if(UserTable.objects.filter(login=json.loads(request.body)['login'])):
+            return JsonResponse([{'code':0,'message':'Такой е-майл зарегестриован, авторизуйтесь!'}],safe=False)
+        if(UserTable.objects.filter(email=json.loads(request.body)['email'])):
+            return JsonResponse([{'code':0,'message':'Пользователь с таким логином зарегестрирован!'}],safe=False)
+        newUser=UserTable(login=data['login'],name=data['name'],surname=data['surname'],password=data['password'],
+                          phone=data['phone'],age=data['age'],email=data['email'],imgurl='',role='U')
+        newUser.save()
+        return JsonResponse([{'code':1,'message':'Пользователь успешно добавлен'}],safe=False)
+
 
 
 def authorization(request):
-    return HttpResponse('as')
-
+    if (request.method == 'POST'):
+        data = json.loads(request.body)
+        print(data)
+        if (UserTable.objects.filter(email=json.loads(request.body)['email'])):
+            if (UserTable.objects.filter(password=json.loads(request.body)['password'])):
+                return JsonResponse([{'code': 2, 'message': 'Вы успешно вошли'}],safe=False)
+            else:
+                return JsonResponse([{'code': 1, 'message': 'Пароль не верный!'}],safe=False)
+        else: return JsonResponse([{'code': 0, 'message': 'Email не верный!'}], safe=False)
+    return JsonResponse([{'code':-1,'message':'Ошибка!'}])
 def main(request):
     return HttpResponse("<h1>welcome to the server</h1>")

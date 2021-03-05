@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class AppPhone(models.Model):
-    id = models.IntegerField(primary_key=True)
+
     producer = models.CharField(max_length=25)
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
@@ -34,13 +34,13 @@ class Cart(models.Model):
 
 
 class UserTable(models.Model):
-    id = models.IntegerField(primary_key=True)
+
     name = models.CharField(max_length=20)
     surname = models.CharField(max_length=20)
     login = models.CharField(max_length=20)
     password = models.CharField(max_length=12)
-    email = models.CharField(max_length=20)
-    phone = models.CharField(max_length=11, blank=True, null=True)
+    email = models.CharField(max_length=40)
+    phone = models.CharField(max_length=16, blank=True, null=True)
     age = models.SmallIntegerField()
     registrationdate = models.DateField()
     imgurl = models.CharField(max_length=40, blank=True, null=True)

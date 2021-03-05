@@ -1,9 +1,7 @@
 export class User{
-    name!:string;
-  surname!:string;
-  login!:string;
-  password!:string;
-  phone!:number;
-  age!:number;
-  email!:string;
+
+  constructor(public name:string,public surname:string,public login:string,public password:string,public phone:number,public age:number,public email:string, public date:Date){
+
+  }
+
 }
