@@ -1,13 +1,13 @@
-<form class="formbox" #productForm="ngForm">
+<form class="formbox" #form="ngForm">
     <div class="form-group">
-        <label>Логин</label>
-        <input class="form-control" id="login" [(ngModel)]="login" required />
+        <label>Email</label>
+        <input name='email' type='email' class="form-control" [(ngModel)]="email" required />
     </div>
     <div class="form-group">
         <label>Пароль</label>
-        <input class="form-control" id="password" [(ngModel)]="password" required />
+        <input name='password' type='password' class="form-control"  [(ngModel)]="password" required />
     </div>
     <div class="form-group">
-        <button [disabled]="form.invalid" class="btn btn-default" (click)="signin()">Войти</button>
+        <button [disabled]="form.invalid" class="btn btn-default" (click)="signin(form)">Войти</button>
     </div>
 </form>

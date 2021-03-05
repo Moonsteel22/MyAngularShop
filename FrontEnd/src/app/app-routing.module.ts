@@ -1,9 +1,9 @@
 import { ProductComponentList } from './Product-list/product.component';
-import { UserComponent } from './userRegistration/user.component';
+import { UserComponent } from './User/userRegistration/user.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserauthorizationComponent } from './userauthorization/userauthorization.component';
+import { UserauthorizationComponent } from './User/userauthorization/userauthorization.component';
 
 const routes: Routes = [
   { path: 'login', component: UserauthorizationComponent},

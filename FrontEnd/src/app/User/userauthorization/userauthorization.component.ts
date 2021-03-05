@@ -1,5 +1,9 @@
 import { NgForm } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import {UserRegistration} from '../user.service'
+import {User} from '../userinterface'
+import { Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userauthorization',
@@ -8,12 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserauthorizationComponent implements OnInit {
 
-  constructor() { }
-  form!:NgForm;
-  login!:string;
+  constructor(private authorization: UserRegistration,private router:Router) { }
+  User!:User;
+  email!:string;
   password!:string;
+  @Output() isEntered=new EventEmitter();
   ngOnInit(): void {
   }
-  signin(){}
-
-}
+ 
+  isEnteredAccount!:boolean;
+  
+  signin(form:NgForm){
+    this.authorization.authorization(new User('1','1','1',form.value.password,123,123,form.value.email,new Date())).subscribe(
+      (data:any)=>{alert(data[0]['message']); if(data[0]['code']==2){ this.parsing(data);} })
+      
+  }
+  parsing(data:any){
+      this.User=new User(data['name'],data['surname'],data['login'],data['password'],data['phone'],data['age'],data['email'],
+      data['date'])
+      this.router.navigate(['']);
+      document.getElementById('EnterButton')!.style.visibility="hidden";
+      document.getElementById('RegistButton')!.style.visibility="hidden";
+  }
+  }

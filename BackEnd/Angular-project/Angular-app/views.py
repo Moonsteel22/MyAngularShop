@@ -24,18 +24,22 @@ def registration(request):
     if(request.method == 'POST'):
         data=json.loads(request.body)
         print(data)
-        if(UserTable.objects.filter(login=json.loads(request.body)['login'])):
-            return JsonResponse([{'code':0,'message':'Такой е-майл зарегестриован, авторизуйтесь!'}],safe=False)
+
         if(UserTable.objects.filter(email=json.loads(request.body)['email'])):
-            return JsonResponse([{'code':0,'message':'Пользователь с таким логином зарегестрирован!'}],safe=False)
+            print("email exists")
+            return JsonResponse([{'code':0,'message':'Пользователь с таким email зарегестрирован!'}],safe=False)
+        if (UserTable.objects.filter(login=json.loads(request.body)['login'])):
+            return JsonResponse([{'code': 0, 'message': 'Такой логин существует!'}], safe=False)
+
         newUser=UserTable(login=data['login'],name=data['name'],surname=data['surname'],password=data['password'],
                           phone=data['phone'],age=data['age'],email=data['email'],imgurl='',role='U')
         newUser.save()
-        return JsonResponse([{'code':1,'message':'Пользователь успешно добавлен'}],safe=False)
+        return JsonResponse([{'code':1,'message':'Вы зарегестрировались,авторизуйтесь'}],safe=False)
 
 
-
+@csrf_exempt
 def authorization(request):
+    print( json.loads(request.body))
     if (request.method == 'POST'):
         data = json.loads(request.body)
         print(data)

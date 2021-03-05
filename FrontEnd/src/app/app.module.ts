@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import { ProductitemComponent } from './productitem/productitem.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserComponent } from './userRegistration/user.component';
-import { UserauthorizationComponent } from './userauthorization/userauthorization.component';
+import { UserComponent } from './User/userRegistration/user.component';
+import { UserauthorizationComponent } from './User/userauthorization/userauthorization.component';
+import { UserInterfaceComponent } from './User/user-interface/user-interface.component';
 
 @NgModule({
   declarations: [
-    AppComponent,ProductComponentList, ProductitemComponent, HeaderComponent, UserComponent, UserauthorizationComponent
+    AppComponent,ProductComponentList, ProductitemComponent, HeaderComponent, UserComponent, UserauthorizationComponent, UserInterfaceComponent
   ],
   imports: [
     
