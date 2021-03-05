@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import {User} from './userinterface'
 @Injectable({providedIn:'root'})
-export class UserAuthorization implements OnInit{
+export class UserRegistration implements OnInit{
     constructor( private HttpClient:HttpClient){
 
     }

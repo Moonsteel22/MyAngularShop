@@ -31,18 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e1737d3-a281-43cc-87da-67494988eea8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-app/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-app/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-app/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-app/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-app/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-app/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

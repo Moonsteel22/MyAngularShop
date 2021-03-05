@@ -1,3 +1,4 @@
+import { UserRegistration } from './user.service';
 import { logging } from 'protractor';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
@@ -15,11 +16,11 @@ export class UserComponent implements OnInit {
   phone!:number;
   age!:number;
   email!:string;
-  form!: FormGroup;
-  constructor() { }
+  form!: NgForm;
+  constructor(private reg:UserRegistration) { }
 
   registration(){
-    
+      this.reg.registration
   }
   ngOnInit(): void {
   }

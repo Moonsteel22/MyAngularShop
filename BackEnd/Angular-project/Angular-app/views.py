@@ -18,5 +18,12 @@ def products(request):
          })
     return JsonResponse([{'data':toClient}],safe=False)
 
+def registration(request):
+    return HttpResponse('as')
+
+
+def authorization(request):
+    return HttpResponse('as')
+
 def main(request):
     return HttpResponse("<h1>welcome to the server</h1>")
