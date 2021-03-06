@@ -38,14 +38,27 @@ def registration(request):
 
 
 @csrf_exempt
-def authorization(request):
-    print( json.loads(request.body))
-    if (request.method == 'POST'):
+def addproduct(request):
+    if(request.method=='POST'):
         data = json.loads(request.body)
         print(data)
+        newProduct=AppPhone(name=data['name'],description=data['description'],producer=data['producer'],
+                            amount=data['amount'],price=data['price'],gpu='not',cpu='not',weight='not',display='not',
+                            ram='not',memory='not',imgurl='./assets/images/'+data['imgPath'],recieveddate=data['date'])
+        newProduct.save()
+        return JsonResponse([{'code':1,'message':'Product has been added!'}],safe=False)
+    return JsonResponse([{'code':0,'message':'Something went wrong'}],safe=False)
+@csrf_exempt
+def authorization(request):
+
+    if (request.method == 'POST'):
         if (UserTable.objects.filter(email=json.loads(request.body)['email'])):
             if (UserTable.objects.filter(password=json.loads(request.body)['password'])):
-                return JsonResponse([{'code': 2, 'message': 'Вы успешно вошли'}],safe=False)
+                data = UserTable.objects.get(email=json.loads(request.body)['email'])
+                return JsonResponse([{'code': 2, 'message': 'Вы успешно вошли','data':
+                                     {'Name':data.name,'Email':data.email,'Registdate':data.registrationdate,
+                                      'login':data.login,'pk':data.pk}
+                                      }],safe=False)
             else:
                 return JsonResponse([{'code': 1, 'message': 'Пароль не верный!'}],safe=False)
         else: return JsonResponse([{'code': 0, 'message': 'Email не верный!'}], safe=False)

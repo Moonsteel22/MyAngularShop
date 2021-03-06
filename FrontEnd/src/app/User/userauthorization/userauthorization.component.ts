@@ -24,7 +24,7 @@ export class UserauthorizationComponent implements OnInit {
   
   signin(form:NgForm){
     this.authorization.authorization(new User('1','1','1',form.value.password,123,123,form.value.email,new Date())).subscribe(
-      (data:any)=>{alert(data[0]['message']); if(data[0]['code']==2){ this.parsing(data);} })
+      (data:any)=>{alert(data[0]['message']); if(data[0]['code']==2){ this.parsing(data);console.log(data)} })
       
   }
   parsing(data:any){

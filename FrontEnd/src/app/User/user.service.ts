@@ -3,6 +3,7 @@ import { Injectable, OnInit } from '@angular/core';
 import {User} from './userinterface'
 @Injectable({providedIn:'root'})
 export class UserRegistration implements OnInit{
+    public User!:User;
     constructor( private HttpClient:HttpClient){
 
     }
@@ -24,7 +25,13 @@ export class UserRegistration implements OnInit{
          return this.HttpClient.post('http://127.0.0.1:8000/authorization',body,{headers:header})
       
     }
-
+    toBDProduct(data:any){
+      console.log(data)
+      let header = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'X-CSRFToken':'sometokenhihihi'});
+      return this.HttpClient.post('http://127.0.0.1:8000/addproduct',data,{headers:header})
+    }
     ngOnInit(): void {
         
     }
