@@ -13,4 +13,7 @@
     </div>
     <div><span class="Element">Цена: {{Price}}</span ></div>
     <div><span class="Element">Общая стоимость: {{Price*Amount}}</span ></div>
-    <div><input id='CartButton' type="button" class="btn btn-primary btn-size-cart" (click)='inCart()' value="В корзину" /></div>
+    <div>
+        <input id='CartButton' type="button" class="btn btn-primary btn-size-cart" (click)='inCart()' value="В корзину" />
+        <input id='DeleteButton' type="button" class="btn btn-primary btn-size-cart" (click)='deleteTovar()' value="Удалить" />
+    </div>

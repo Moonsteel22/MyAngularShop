@@ -2,8 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import {User} from './userinterface'
 @Injectable({providedIn:'root'})
-export class UserRegistration implements OnInit{
+export class UserService implements OnInit{
     public User!:User;
+    public cartList:any;
     constructor( private HttpClient:HttpClient){
 
     }
@@ -24,6 +25,12 @@ export class UserRegistration implements OnInit{
          const body={email:User.email,password:User.password}
          return this.HttpClient.post('http://127.0.0.1:8000/authorization',body,{headers:header})
       
+    }
+    getUser(){
+      return this.User;
+    }
+    getProductList(){
+      return this.cartList;
     }
     toBDProduct(data:any){
       console.log(data)

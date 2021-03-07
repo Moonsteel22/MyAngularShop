@@ -1,6 +1,6 @@
 import { NgForm } from '@angular/forms';
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import {UserRegistration} from '../user.service'
+import {UserService} from '../user.service'
 import {User} from '../userinterface'
 import { Output } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class UserauthorizationComponent implements OnInit {
 
-  constructor(private authorization: UserRegistration,private router:Router) { }
+  constructor(private authorization: UserService,private router:Router) { }
   User!:User;
   email!:string;
   password!:string;
@@ -30,6 +30,7 @@ export class UserauthorizationComponent implements OnInit {
   parsing(data:any){
       this.User=new User(data['name'],data['surname'],data['login'],data['password'],data['phone'],data['age'],data['email'],
       data['date'])
+      this.authorization.User=this.User;
       this.router.navigate(['']);
       document.getElementById('EnterButton')!.style.visibility="hidden";
       document.getElementById('RegistButton')!.style.visibility="hidden";

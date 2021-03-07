@@ -1,3 +1,4 @@
+import { UserService } from './../user.service';
 import { User } from './../userinterface';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,11 +11,14 @@ import { Router } from '@angular/router';
 export class UserInterfaceComponent implements OnInit {
   isAuthorized:boolean=false;
   User!:User;
-  constructor(private router:Router) { }
+  constructor(private router:Router,private UserService:UserService) { }
   ProductList=[{Name:'asd',Amount:10,Price:20,Sum:200,ID:2,Image:""}]
   ngOnInit(): void {
     if(document.getElementById('EnterButton')!.style.visibility=='hidden'){
       this.router.navigate(['/user'])
+      this.User=this.UserService.getUser();
+      this.ProductList=this.UserService.getProductList();
+      console.log(User);
     }
     else{
       alert('Авторизуйтесь!'); 
@@ -26,4 +30,5 @@ export class UserInterfaceComponent implements OnInit {
     document.getElementById('EnterButton')!.style.visibility='visible';
     document.getElementById('UserButton')!.style.visibility='hidden';
   }
+  
 }

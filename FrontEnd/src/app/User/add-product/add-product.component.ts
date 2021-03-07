@@ -1,4 +1,4 @@
-import { UserRegistration } from './../user.service';
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor(private user:UserRegistration) { }
+  constructor(private user:UserService) { }
   addProduct(form:NgForm){
     const imgPath=form.value.ProductImg.substr(12);
     const toSend={imgPath:imgPath,name:form.value.ProductName,description:form.value.ProductDescription,price:form.value.ProductPrice,

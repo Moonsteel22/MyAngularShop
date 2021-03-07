@@ -1,4 +1,4 @@
-import { UserRegistration } from '../user.service';
+import { UserService } from '../user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
 import {User} from '../userinterface'
@@ -6,7 +6,7 @@ import {User} from '../userinterface'
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
-  providers:[UserRegistration]
+  providers:[UserService]
 })
 export class UserComponent implements OnInit {
   name!:string;
@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   email!:string;
   date!:Date;
 
-  constructor(private reg:UserRegistration) { }
+  constructor(private reg:UserService) { }
 
   registration(form:NgForm) : void{
       

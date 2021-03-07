@@ -18,7 +18,8 @@ def products(request):
          'Sum': i['fields']['amount'] * i['fields']['price'], 'Price': i['fields']['price'],
          'Image': i['fields']['imgurl']
          })
-    return JsonResponse([{'data':toClient}],safe=False)
+
+    return JsonResponse([{'data': toClient}],safe=False)
 @csrf_exempt
 def registration(request):
     if(request.method == 'POST'):
@@ -63,5 +64,15 @@ def authorization(request):
                 return JsonResponse([{'code': 1, 'message': 'Пароль не верный!'}],safe=False)
         else: return JsonResponse([{'code': 0, 'message': 'Email не верный!'}], safe=False)
     return JsonResponse([{'code':-1,'message':'Ошибка!'}])
+
+@csrf_exempt
+def deleteproduct(request):
+    if(request.method=='POST'):
+        ID=json.loads(request.body)['ID']
+        forDelete=AppPhone.objects.get(pk=ID)
+        forDelete.delete()
+        return JsonResponse([{'code':1,'message':'Успех'}],safe=False)
+    return JsonResponse([{'code':0,'message':'error'}])
+
 def main(request):
     return HttpResponse("<h1>welcome to the server</h1>")

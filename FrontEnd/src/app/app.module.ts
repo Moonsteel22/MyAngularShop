@@ -1,10 +1,11 @@
-import { ProductComponentList } from './Product-list/product.component';
+import { PDService } from './ProductComponents/ProductDeleteService.service';
+import { ProductComponentList } from './ProductComponents/Product-list/product.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductitemComponent } from './productitem/productitem.component';
+import { ProductitemComponent } from './ProductComponents/productitem/productitem.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './User/userRegistration/user.component';
