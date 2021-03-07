@@ -12,6 +12,7 @@
     flex-direction: row;
 
 }
+
 .ImageClass{
     display:block;
     text-align: center;
@@ -21,8 +22,9 @@
     width:20%;
 }
 .btn-size-cart{
-    margin-left:5px;
+    margin-left:8px;
     visibility: visible;
+
 }
 .btn-size{
     width: 10px;

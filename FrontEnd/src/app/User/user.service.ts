@@ -5,6 +5,7 @@ import {User} from './userinterface'
 export class UserService implements OnInit{
     public User!:User;
     public cartList:any;
+    isAuthorized:boolean=false;
     constructor( private HttpClient:HttpClient){
 
     }
@@ -29,11 +30,11 @@ export class UserService implements OnInit{
     getUser(){
       return this.User;
     }
-    getProductList(){
-      return this.cartList;
+    getProductList(userID:number){
+      return this.HttpClient.get('http://127.0.0.1:8000/cartProducts?userID='+userID)
     }
     toBDProduct(data:any){
-      console.log(data)
+
       let header = new HttpHeaders({
         'Content-Type': 'application/json',
         'X-CSRFToken':'sometokenhihihi'});

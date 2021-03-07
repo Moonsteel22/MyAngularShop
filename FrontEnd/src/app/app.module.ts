@@ -1,4 +1,4 @@
-import { PDService } from './ProductComponents/ProductDeleteService.service';
+
 import { ProductComponentList } from './ProductComponents/Product-list/product.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -12,13 +12,14 @@ import { UserComponent } from './User/userRegistration/user.component';
 import { UserauthorizationComponent } from './User/userauthorization/userauthorization.component';
 import { UserInterfaceComponent } from './User/user-interface/user-interface.component';
 import { AddProductComponent } from './User/add-product/add-product.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,ProductComponentList, ProductitemComponent, HeaderComponent, UserComponent, UserauthorizationComponent, UserInterfaceComponent, AddProductComponent
   ],
   imports: [
-    
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

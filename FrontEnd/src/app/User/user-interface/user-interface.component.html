@@ -2,22 +2,22 @@
     <div class="userInfoBlock">
 <div class="element">
 <span>
-    Логин:
+    Логин: {{User.login}}
 </span>
 </div>
 <div class="element">
     <span>
-    E-mail:
+    E-mail: {{User.email}}
 </span>
 </div > 
 <div class="element">
     <span>
-    Дата регистрации:
+    Дата регистрации: 
     </span>
 </div >
 <div class="element">
-    <span>
-    Баланс:
+    <span> 
+    Баланс: 0
     </span>
 </div>
 <div>
@@ -30,6 +30,7 @@
             <app-productitem *ngFor="let item of ProductList; let i = index" class="oneTovar"
               [Name]="item.Name"
               [Amount]="item.Amount"
+              [Id]="item.pk"
               [Price]="item.Price"
               [Image]="item.Image"
               Cart="hidden"

@@ -1,9 +1,10 @@
+import django
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import AppPhone
-from .models import UserTable
+from .models import UserTable,Cart
 from django.core import serializers
 import json
 # Create your views here.
@@ -68,11 +69,48 @@ def authorization(request):
 @csrf_exempt
 def deleteproduct(request):
     if(request.method=='POST'):
-        ID=json.loads(request.body)['ID']
-        forDelete=AppPhone.objects.get(pk=ID)
-        forDelete.delete()
-        return JsonResponse([{'code':1,'message':'Успех'}],safe=False)
+        try:
+            ID=json.loads(request.body)['ID']
+            forDelete=AppPhone.objects.get(pk=ID)
+            forDelete.delete()
+            return JsonResponse([{'code':1,'message':'Успех'}],safe=False)
+        except: return JsonResponse([{'code':0,'message':'Ошибка! Кто-то добавил товар в корзину!'}],safe=False)
     return JsonResponse([{'code':0,'message':'error'}])
 
+@csrf_exempt
+def addtocart(request):
+    if(request.method=='POST'):
+        try:
+            idies=json.loads(request.body)
+            Cart.objects.create(userid=UserTable.objects.get(pk=idies['UserID']),phoneid=AppPhone.objects.get(pk=idies['PhoneID']),amount=1)
+            return JsonResponse([{'code':1,'message':'Успех!'}],safe=False)
+        except django.db.utils.IntegrityError:
+            return JsonResponse([{'code': 0, 'message': 'Такой товар уже есть в корзине!!'}], safe=False)
+    return JsonResponse([{'code':0,'message':'Error'}],safe=False)
+def deletefromcart(request):
+    print(request.GET.get('phoneid',-1))
+    if (request.method == 'GET'):
+        try:
+            print(request.GET.get('userid',-1))
+            Cart.objects.filter(phoneid=request.GET.get('phoneid',-1),userid=request.GET.get('userid',-1)).delete()
+
+            return JsonResponse([{'code': 1, 'message': 'Успех!'}], safe=False)
+        except django.db.utils.IntegrityError:
+            return JsonResponse([{'code': 0, 'message': 'Такого товара нет'}], safe=False)
+    return JsonResponse([{'code': 0, 'message': 'Error'}], safe=False)
+def cartProducts(request):
+    if(request.method=='GET'):
+        buf=AppPhone.objects.raw("SELECT * FROM app_phone WHERE id in (SELECT phoneid FROM cart WHERE userid="+request.GET.get('userID',0)+ ")")
+        result=[]
+        for i in buf:
+            result.append({'pk': i.pk, 'Producer': i.producer, 'Display': i.display,
+                               'Name': i.name,
+                               'Description': i.description, 'Amount': i.amount,
+                               'Sum': i.amount * i.price, 'Price': i.price,
+                               'Image': i.imgurl
+                               })
+        return JsonResponse([{'code':1,'message':'Успех!','data':result}],safe=False)
+
+    return JsonResponse([{'code':0,'message':'nothing'}],safe=False)
 def main(request):
     return HttpResponse("<h1>welcome to the server</h1>")

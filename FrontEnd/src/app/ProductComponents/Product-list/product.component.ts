@@ -14,7 +14,7 @@ export class ProductComponentList implements OnInit{
 
     constructor(private productService:productService){}
     ngOnInit(): void {
-        this.productService.getProduct().subscribe((data:any)=>{this.ProductList=data[0]['data'];console.log(this.ProductList)});
+        this.productService.getProduct().subscribe((data:any)=>{this.ProductList=data[0]['data'];});
     }
     ProductList:any;
    dataReceived:boolean=false;
