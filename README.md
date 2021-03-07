@@ -8,6 +8,7 @@
   <li>Устанавливаете Django</li>
   <li>В postgresql создаете базу данных</li>
   <li>Клонируйте себе эту ветку</li>
+  <li>В settings.py меняете номер порта с 4200 на свой, везде где есть localhost:4200 </li>
   <li>В settings.py изменяете в DATABASES поле Name на свою базу данных(пустую), которую вы создали, так же изменяете имя пользователя на свой в USER</li>
   <li>Выполняете команду python manage.py makemigrations, после python manage.py migrate </li>
   <li>Запускаете сервер python manage.py runserver</li>
