@@ -2,10 +2,25 @@
 
 <h1>Установка</h1>
 <ul>
-  <li>Установите node.js</li>
-  <li>Устанавливаете postgresql</li>
-  <li>Устанавливаете виртуальное окружение для Django</li>
-  <li>Устанавливаете Django</li>
+  <li>Установите node.js - https://nodejs.org/en/</li>
+  <li>Устанавливаете postgresql https://www.postgresql.org/</li>
+  <li>Нужно установить менеджер пакетов pip и python - https://www.python.org/downloads/ , https://pypi.org/project/pip/ </li>
+  <li>Устанавливаете виртуальное окружение для Django:
+    <ul>
+      <li> pip install virtualenv </li>
+      <li> virtualenv 'название среды'</li>
+    </ul>
+  
+  </li>
+  <li>Запускаем виртуальное окружение:</li>
+  <ul>
+  <li>
+    В папке виртуального окружения переходим в scripts и запускаем activate.bat
+  </li>
+  </ul>
+  
+  <li>Устанавливаете Django: pip install django</li>
+  <li>Создаем проект Django</li>
   <li>В postgresql создаете базу данных</li>
   <li>Клонируйте себе эту ветку</li>
   <li>В settings.py меняете номер порта с 4200 на свой, везде где есть localhost:4200 </li>
