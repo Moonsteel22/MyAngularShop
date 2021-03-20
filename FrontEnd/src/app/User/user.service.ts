@@ -1,13 +1,16 @@
+import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import {User} from './userinterface'
+import {Observable} from 'rxjs'
 @Injectable({providedIn:'root'})
 export class UserService implements OnInit{
     public User!:User;
     public cartList:any;
-    isAuthorized:boolean=false;
-    constructor( private HttpClient:HttpClient){
-
+    data=sessionStorage.user ? JSON.parse(sessionStorage.user) : undefined ;
+    public isLogged:boolean=sessionStorage.user;
+    constructor( private HttpClient:HttpClient,private router:Router){
+      
     }
     registration(User:User){
       let header = new HttpHeaders({
@@ -27,9 +30,7 @@ export class UserService implements OnInit{
          return this.HttpClient.post('http://127.0.0.1:8000/authorization',body,{headers:header})
       
     }
-    getUser(){
-      return this.User;
-    }
+  
     getProductList(userID:number){
       return this.HttpClient.get('http://127.0.0.1:8000/cartProducts?userID='+userID)
     }
@@ -41,6 +42,10 @@ export class UserService implements OnInit{
       return this.HttpClient.post('http://127.0.0.1:8000/addproduct',data,{headers:header})
     }
     ngOnInit(): void {
-        
+      if(sessionStorage.user)
+      this.User=new User(this.data['ID'],this.data['name'],
+      this.data['surname'],this.data['login'],this.data['password'],this.data['phone'],this.data['age'],this.data['email'],
+      this.data['date'])
     }
+    
 }

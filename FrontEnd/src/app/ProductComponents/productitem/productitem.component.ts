@@ -18,7 +18,7 @@ export class ProductitemComponent implements OnInit{
   @Input() Price:number =0;
   @Input() Image:string="";
   @Input() Cart:string="visible";
-  DeleteButton:boolean=this.UserService.isAuthorized;
+  DeleteButton:boolean=this.UserService.isLogged;
   DeleteFromCartButton=window.location.href.search('user')>0;
   CartButton=window.location.href.search('user')==-1;
   Sum:number =0;
@@ -31,7 +31,7 @@ export class ProductitemComponent implements OnInit{
   }
   constructor(private PDService:PDCService,private router:Router,private UserService:UserService) { }
   inCart(){
-    if(!this.UserService.isAuthorized){
+    if(!this.UserService.isLogged){
         alert('Авторизуйтесь!')
     }
     else{
@@ -46,6 +46,7 @@ export class ProductitemComponent implements OnInit{
 
   }
   ngOnInit(): void {
+    
   }
  
 

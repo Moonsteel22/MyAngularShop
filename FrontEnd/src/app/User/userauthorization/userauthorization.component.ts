@@ -4,6 +4,7 @@ import {UserService} from '../user.service'
 import {User} from '../userinterface'
 import { Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-userauthorization',
@@ -29,10 +30,9 @@ export class UserauthorizationComponent implements OnInit {
   parsing(data:any){
       this.authorization.User=new User(data['pk'],data['Name'],data['Surname'],data['login'],data['Password'],data['phone'],data['age'],data['Email'],
       data['date'])
-      this.authorization.isAuthorized=true;
+      sessionStorage.setItem('user',JSON.stringify(this.authorization.User))
+      this.authorization.isLogged=true;
       this.router.navigate(['']);
-      document.getElementById('EnterButton')!.style.visibility="hidden";
-      document.getElementById('RegistButton')!.style.visibility="hidden";
-      document.getElementById('UserButton')!.style.visibility="visible";
+    
   }
   }

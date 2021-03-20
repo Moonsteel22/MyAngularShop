@@ -14,14 +14,24 @@ import { Router } from '@angular/router';
 export class UserInterfaceComponent implements OnInit {
   isAuthorized:boolean=false;
   User!:User;
-  constructor(private router:Router,private UserService:UserService) { }
+  data:any;
+  constructor(private router:Router,private UserService:UserService) {
+    if(sessionStorage.user){
+    this.data=JSON.parse(sessionStorage.user);
+    this.User=new User(this.data['ID'],this.data['name'],this.data['surname'],this.data['login'],this.data['password'],this.data['phone'],this.data['age'],this.data['email'],
+      this.data['date'])
+    }
+    else{
+      alert("Авторизуйтесь!")
+      this.router.navigate([''])
+    }
+   }
   ProductList:any;
   ngOnInit(): void {
-    if(document.getElementById('EnterButton')!.style.visibility=='hidden'){
-      this.User=this.UserService.User;
+    console.log(sessionStorage.user)
+    if(sessionStorage.user){
       this.UserService.getProductList(this.User.ID).subscribe((data:any)=>this.ProductList=data[0]['data']);
       this.router.navigate(['/user'])
-      
     }
     else{
       alert('Авторизуйтесь!'); 
@@ -29,9 +39,8 @@ export class UserInterfaceComponent implements OnInit {
     }
   }
   exitClick(){
-    document.getElementById('RegistButton')!.style.visibility='visible';
-    document.getElementById('EnterButton')!.style.visibility='visible';
-    document.getElementById('UserButton')!.style.visibility='hidden';
+    sessionStorage.removeItem('user');
+    this.UserService.isLogged=false;
   }
   
 }

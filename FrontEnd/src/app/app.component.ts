@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 
@@ -8,7 +8,10 @@ import { Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
+  ngOnInit(): void {
+    console.log(sessionStorage.user)
+  }
   Hidden:boolean=true;
  
 // addProduct(form:NgForm): void{

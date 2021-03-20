@@ -1,3 +1,4 @@
+import { UserGuard } from './User/user.guard';
 import { AddProductComponent } from './User/add-product/add-product.component';
 import { UserInterfaceComponent } from './User/user-interface/user-interface.component';
 import { ProductComponentList } from './ProductComponents/Product-list/product.component';
@@ -9,7 +10,7 @@ import { UserauthorizationComponent } from './User/userauthorization/userauthori
 
 const routes: Routes = [
   {path:'addproduct',component:AddProductComponent},
-  {path:'user',component:UserInterfaceComponent},
+  {path:'user',component:UserInterfaceComponent,canActivate:[UserGuard]},
   {path:'userCart',component: UserInterfaceComponent},
   { path: 'login', component: UserauthorizationComponent},
   {path:'registration',component:UserComponent},
@@ -19,5 +20,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers:[UserGuard]
 })
 export class AppRoutingModule { }

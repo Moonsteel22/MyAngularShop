@@ -1,5 +1,9 @@
+import { User } from './../User/userinterface';
+import { UserService } from './../User/user.service';
 
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({
@@ -8,11 +12,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
-  
-  ngOnInit(): void {
+  constructor(public UserService:UserService) { 
     
+  }
+
+  ngOnInit(): void {
+    console.log(this.UserService.isLogged)
   }
 
 }
