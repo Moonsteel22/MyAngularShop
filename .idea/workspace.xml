@@ -32,21 +32,18 @@
   <component name="ChangeListManager">
     <list default="true" id="9e1737d3-a281-43cc-87da-67494988eea8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Angular-project/Angular-app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/Product-list/product.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/Product-list/product.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/ProductDeleteService.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/productitem/productitem.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/productitem/productitem.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/productitem/productitem.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/productitem/productitem.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/ProductService.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/ProductService.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/productitem/productitem.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/productitem/productitem.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/userRegistration/user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/userRegistration/user.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/userauthorization/userauthorization.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/userauthorization/userauthorization.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/userinterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/userinterface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/header/header.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +62,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Parser" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -96,5 +93,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1615831266614">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1615831266614" />
   </component>
 </project>
