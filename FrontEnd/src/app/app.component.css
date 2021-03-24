@@ -1,21 +1,4 @@
-.mb-3{
-    width:200px;
-    margin-left:10px;
-    height: 65px;
-}
-.selector-for-some-widget {
-    box-sizing: content-box;
-  }
-.main{
-    display: flex;
-    height: 1000px;
-    flex-direction: column;
- 
-}
-.form-control{
-    margin-left:310px;
-    margin-right: auto;
-    margin-top:50px;
-    width: 800px;
-
+.footer{
+    height: 400px;
+    background-color: rgb(54, 50, 50);
 }

@@ -1,8 +1,9 @@
 
 import { UserService } from './../user.service';
 import { User } from './../userinterface';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { ControlValueAccessor } from '@angular/forms';
 
 
 @Component({
@@ -15,6 +16,10 @@ export class UserInterfaceComponent implements OnInit {
   isAuthorized:boolean=false;
   User!:User;
   data:any;
+  CartShowing:boolean=false;
+  AddShowing:boolean=false;
+  CatalogShowing:boolean=false;
+  ExistShowing:boolean=false;
   constructor(private router:Router,private UserService:UserService) {
     if(sessionStorage.user){
     this.data=JSON.parse(sessionStorage.user);
@@ -26,11 +31,9 @@ export class UserInterfaceComponent implements OnInit {
       this.router.navigate([''])
     }
    }
-  ProductList:any;
   ngOnInit(): void {
-    console.log(sessionStorage.user)
     if(sessionStorage.user){
-      this.UserService.getProductList(this.User.ID).subscribe((data:any)=>this.ProductList=data[0]['data']);
+      this.UserService.getProductList(JSON.parse(sessionStorage.user)['ID']).subscribe((data:any)=>this.UserService.cartList=data[0]['data']);
       this.router.navigate(['/user'])
     }
     else{
@@ -38,9 +41,11 @@ export class UserInterfaceComponent implements OnInit {
       this.router.navigate([''])
     }
   }
-  exitClick(){
-    sessionStorage.removeItem('user');
-    this.UserService.isLogged=false;
+  switchOff(){
+    this.CartShowing=false;
+    this.CatalogShowing=false;
+    this.AddShowing=false;
   }
+  
   
 }

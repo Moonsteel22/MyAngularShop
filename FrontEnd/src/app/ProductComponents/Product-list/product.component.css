@@ -10,27 +10,28 @@
     outline:1px solid rgb(119, 145, 184);
     width: 330px;
     height: 400px;
-    background-color: rgb(218, 233, 255);
     margin:15px;
+    display:block;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 .TovarsBox{
-    width: 1200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0,5);
     display: flex;
     flex-direction: row;
-    outline:0.5px solid rgb(196, 211, 233);
-    background-color: rgb(248, 251, 255);
     flex-wrap:wrap;
     justify-content: center;
     overflow: auto;
-    height: 800px;
+    
 }
 
 .container-sm{
     width: 320px;
 }
 .container-size{
-    margin-left:300px;
-    margin-top:150px;
+margin-left:auto;
+margin-right: auto;
+margin-top: 200px;
+    background-color: rgb(245, 245, 245);
 }
 .TovarTitle{
     width: 25%;

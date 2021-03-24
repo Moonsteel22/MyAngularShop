@@ -31,24 +31,7 @@ hr{
     margin-right: auto;
     width: 1600px;
 }
-.AvatarImage{
-    width:220px;
-    height: 340px;
-}
-.UserDescription{
-    margin-left:252px;
-    margin-top:20px;
-    display:flex;
-    flex-direction: row;
-    
-}
-.UserInfoPanel{
-   margin-left:200px; 
-   font-size:30px;
-}
-.TextElement{
-    padding-bottom:32px;
-}
+
 .cartText{
     margin-left:auto;
     margin-right: auto;

@@ -30,7 +30,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e1737d3-a281-43cc-87da-67494988eea8" name="Default Changelist" comment="" />
+    <list default="true" id="9e1737d3-a281-43cc-87da-67494988eea8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/Product-list/product.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/ProductComponents/Product-list/product.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/user-interface/user-interface.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/User/user.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/User/user.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

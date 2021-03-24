@@ -1,5 +1,5 @@
 import { UserGuard } from './User/user.guard';
-import { AddProductComponent } from './User/add-product/add-product.component';
+import { AddProductComponent } from './User/user-interface/add-product/add-product.component';
 import { UserInterfaceComponent } from './User/user-interface/user-interface.component';
 import { ProductComponentList } from './ProductComponents/Product-list/product.component';
 import { UserComponent } from './User/userRegistration/user.component';

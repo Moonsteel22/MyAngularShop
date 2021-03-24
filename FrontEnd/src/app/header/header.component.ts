@@ -15,7 +15,10 @@ export class HeaderComponent implements OnInit {
   constructor(public UserService:UserService) { 
     
   }
-
+  exitClick(){
+    sessionStorage.removeItem('user');
+    this.UserService.isLogged=false;
+  }
   ngOnInit(): void {
     console.log(this.UserService.isLogged)
   }

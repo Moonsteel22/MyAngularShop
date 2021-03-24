@@ -1,0 +1,22 @@
+<div class="container container-size flex Cart">
+    <div class='CartText'><span>Корзина</span></div>
+    <div class='CartButtons'>
+        <div>
+            <a class='btn btn-primary element'>Оформить заказ</a>
+        </div>
+        <div>
+            <a class='btn btn-primary element'>Очистить корзину</a>
+        </div>
+    </div>
+    <div class="TovarsBox">
+        <hr/>
+            <app-productitem *ngFor="let item of ProductList; let i = index" class="oneTovar"
+              [Name]="item.Name"
+              [Amount]="item.Amount"
+              [Id]="item.pk"
+              [Price]="item.Price"
+              [Image]="item.Image"
+              >
+            </app-productitem>
+    </div>
+</div>

@@ -12,7 +12,6 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     console.log(sessionStorage.user)
   }
-  Hidden:boolean=true;
  
 // addProduct(form:NgForm): void{
 //   console.log(form.value)

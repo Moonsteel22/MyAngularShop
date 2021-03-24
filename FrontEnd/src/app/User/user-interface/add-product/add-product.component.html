@@ -1,0 +1,30 @@
+<form #ProductForm="ngForm" class="form" ngSubmit="addProduct(ProductForm)">
+  <div class="mb-3">
+    <label for="ProductInputName" class="form-label">Название продукта</label>
+    <input type="text" class="form-control" name="ProductName" [ngModel]>
+  </div>
+  <div class="mb-3">
+      <label for="ProductInputMaker" class="form-label">Производитель</label>
+      <input type="text" class="form-control" name="ProductMaker" [ngModel]>
+    </div>
+  <div class="mb-3">
+    <label for="ProductInputAmount" class="form-label">Количество</label>
+    <input type="number" class="form-control" name="ProductAmount" [ngModel]>
+  </div>
+  <div class="mb-3">
+    <label for="ProductInputPrice" class="form-label">Цена</label>
+    <input type="number" class="form-control" name="ProductPrice" [ngModel]>
+  </div>
+  <div class="mb-3">
+      <label for="ProductInputDescription" class="form-label">Описание</label>
+      <textarea type='text' class="form-control" name="ProductDescription" [ngModel]></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="ProductInputImg" class="form-label">Путь к изображению:</label>
+      <input type='file' class="form-control" name="ProductImg" [ngModel]>
+    </div>
+  <div class="mb-3">
+    <button (click)="addProduct(ProductForm)" type="submit" class="btn btn-primary">Отправить</button>
+  </div>
+  
+</form>
