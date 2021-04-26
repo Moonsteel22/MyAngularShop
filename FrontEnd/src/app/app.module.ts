@@ -15,12 +15,12 @@ import { AddProductComponent } from './User/user-interface/add-product/add-produ
 import { CommonModule } from '@angular/common';
 import { DeleteproductComponent } from './ProductComponents/deleteproduct/deleteproduct.component';
 
-import { UsercatalogueComponent } from './User/user-interface/usercatalogue/usercatalogue.component';
 import { CartComponent } from './User/user-interface/cart/cart.component';
+import { OrderComponent } from './User/user-interface/order/order.component';
 
 @NgModule({
   declarations: [
-    AppComponent,ProductComponentList, ProductitemComponent, HeaderComponent, UserComponent, UserauthorizationComponent, UserInterfaceComponent, AddProductComponent, DeleteproductComponent, CartComponent, UsercatalogueComponent
+    AppComponent,ProductComponentList, ProductitemComponent, HeaderComponent, UserComponent, UserauthorizationComponent, UserInterfaceComponent, AddProductComponent, DeleteproductComponent, CartComponent, OrderComponent,
   ],
   imports: [
     CommonModule,

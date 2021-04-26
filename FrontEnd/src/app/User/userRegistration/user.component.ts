@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
       
       // this.reg.registration(form.value.login)
       this.reg.registration(new User(0,form.value.name,form.value.surname,form.value.login,form.value.password,
-        form.value.phone,form.value.age,form.value.email,new Date())).subscribe((data:any)=>alert(data[0]['message']))
+        form.value.phone,form.value.age,form.value.email,new Date(),'U')).subscribe((data:any)=>alert(data[0]['message']))
       
   }
   ngOnInit(): void {

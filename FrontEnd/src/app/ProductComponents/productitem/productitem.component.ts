@@ -18,7 +18,7 @@ export class ProductitemComponent implements OnInit{
   @Input() Price:number =0;
   @Input() Image:string="";
   @Input() Cart:string="visible";
-  DeleteButton:boolean=this.UserService.isLogged;
+  DeleteButton:boolean=JSON.parse(sessionStorage.user)['role']=='A';
   DeleteFromCartButton=window.location.href.search('user')>0;
   CartButton=window.location.href.search('user')==-1;
   Sum:number =0;
@@ -43,10 +43,10 @@ export class ProductitemComponent implements OnInit{
   }
   deletefromcart(){
      this.PDService.fromcart(this.Id).subscribe((data:any)=>{alert(data[0]['message']); if(data[0]['code']==1){}})
-
+      location.reload();
   }
   ngOnInit(): void {
-    
+    console.log()
   }
  
 

@@ -22,14 +22,16 @@ export class UserauthorizationComponent implements OnInit {
  
   isEnteredAccount!:boolean;
   
+  // Метод вызывает метод из Сервиса для выполнения запроса на получение данных о пользователе по Майлу и Паролю
   signin(form:NgForm){
-    this.authorization.authorization(new User(1,'1','1','1',form.value.password,123,123,form.value.email,new Date())).subscribe(
+    this.authorization.authorization({'pass':form.value.password,'email':form.value.email}).subscribe(
       (data:any)=>{alert(data[0]['message']); if(data[0]['code']==2){ this.parsing(data[0]['data']);} })
       
   }
+  // Метод для парса информации о пользователе и создании объекта User с полученными параметрами
   parsing(data:any){
       this.authorization.User=new User(data['pk'],data['Name'],data['Surname'],data['login'],data['Password'],data['phone'],data['age'],data['Email'],
-      data['date'])
+      data['date'],data['role'])
       sessionStorage.setItem('user',JSON.stringify(this.authorization.User))
       this.authorization.isLogged=true;
       this.router.navigate(['']);

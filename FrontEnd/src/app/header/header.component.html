@@ -3,7 +3,7 @@
 	<span class="headerTitle">SomeTitle</span>
     <div class="linkblock">
         <a class="btn btn-primary links" [routerLink]="['']">На главную</a>
-        <a class="btn btn-primary links" [routerLink]="['/deleteProduct']">Удалить товар</a>
+       
     </div>
     <div class="enterbuttons">
         <a *ngIf="!UserService.isLogged" [routerLink]="['/registration']" id="RegistButton" value="Регистрация" class="btn btn-primary autorization hidden" type="button">Регистрация</a>
